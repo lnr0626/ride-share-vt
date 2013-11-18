@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android-library'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+    release {
+        runProguard true
+        proguardFile 'proguard-rules.txt'
+        proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+    }
+}
+
+dependencies {
+
+	// You must install or update the Support Repository through the SDK manager to use this dependency.
+	// The Support Repository (separate from the corresponding library) can be found in the Extras category.
+	// compile 'com.android.support:support-v4:18.0.0'
+}
