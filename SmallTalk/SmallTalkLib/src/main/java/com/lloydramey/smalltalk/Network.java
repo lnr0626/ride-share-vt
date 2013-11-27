@@ -22,6 +22,7 @@ public class Network {
 		kryo.register(RejectedLogin.class);
 		kryo.register(LoggedInUsers.class);
 		kryo.register(String[].class);
+		kryo.register(MessageLog.class);
 	}
 	
 	static public class Login {
@@ -36,6 +37,10 @@ public class Network {
 	}
 	
 	static public class RejectedLogin {
+	}
+	
+	static public class MessageLog {
+		ArrayList<Message> messages;
 	}
 	
 	static public class UserLoggedOut {

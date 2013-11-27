@@ -13,6 +13,7 @@ import com.lloydramey.smalltalk.Network.LoggedInUsers;
 import com.lloydramey.smalltalk.Network.Login;
 import com.lloydramey.smalltalk.Network.Logout;
 import com.lloydramey.smalltalk.Network.Message;
+import com.lloydramey.smalltalk.Network.MessageLog;
 import com.lloydramey.smalltalk.Network.RejectedLogin;
 import com.lloydramey.smalltalk.Network.User;
 import com.lloydramey.smalltalk.Network.UserLoggedIn;
@@ -22,8 +23,8 @@ public class SmallTalkServer {
 	private int tcpPort;
 	private int udpPort;
 	private Server server;
-	private ArrayList<Message> messages;
 	private HashSet<User> loggedInUsers;
+	private MessageLog log;
 
 	public SmallTalkServer(int tcpPort, int udpPort) {
 		this.tcpPort = tcpPort;
@@ -34,7 +35,8 @@ public class SmallTalkServer {
 			}
 		};
 		Network.register(server);
-		messages = new ArrayList<Message>();
+		log = new MessageLog();
+		log.messages = new ArrayList<Message>();
 		Log.INFO();
 		loggedInUsers = new HashSet<Network.User>();
 	}
@@ -88,7 +90,7 @@ public class SmallTalkServer {
 
 					Log.info("New message from " + msg.from + " sent "
 							+ msg.sent.toString());
-					messages.add(msg);
+					log.messages.add(msg);
 					server.sendToAllExceptTCP(connection.getID(), msg);
 
 				}
@@ -134,7 +136,7 @@ public class SmallTalkServer {
 		LoggedInUsers users = new LoggedInUsers();
 		users.names = userNames;
 		server.sendToTCP(c.getID(), users);
-		server.sendToTCP(c.getID(), messages);
+		server.sendToTCP(c.getID(), log);
 
 		UserLoggedIn loggedIn = new UserLoggedIn();
 		loggedIn.first = user.first;

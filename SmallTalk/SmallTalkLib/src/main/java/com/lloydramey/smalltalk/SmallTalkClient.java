@@ -5,10 +5,17 @@ import java.util.Date;
 import java.util.Scanner;
 
 import com.esotericsoftware.kryonet.Client;
+import com.esotericsoftware.kryonet.Connection;
+import com.esotericsoftware.kryonet.Listener;
+import com.lloydramey.smalltalk.Network.LoggedInUsers;
 import com.lloydramey.smalltalk.Network.Login;
 import com.lloydramey.smalltalk.Network.Logout;
 import com.lloydramey.smalltalk.Network.Message;
+import com.lloydramey.smalltalk.Network.MessageLog;
+import com.lloydramey.smalltalk.Network.RejectedLogin;
 import com.lloydramey.smalltalk.Network.User;
+import com.lloydramey.smalltalk.Network.UserLoggedIn;
+import com.lloydramey.smalltalk.Network.UserLoggedOut;
 
 public class SmallTalkClient {
 	private String serverAddress;
@@ -17,6 +24,8 @@ public class SmallTalkClient {
 	private int tcpPort;
 	private Client client;
 	private final int TIMEOUT = 5000;
+	
+	private SmallTalkListener listener;
 
 	public SmallTalkClient(String address, int tcpPort, int udpPort) {
 		this.serverAddress = address;
@@ -25,7 +34,11 @@ public class SmallTalkClient {
 		client = new Client();
 		Network.register(client);
 	}
-
+	
+	public void setMessageListener(SmallTalkListener l) { 
+		listener = l;
+	}
+	
 	public SmallTalkClient(String address, int tcpPort) {
 		this(address, tcpPort, -1);
 	}
@@ -58,7 +71,34 @@ public class SmallTalkClient {
 			client.connect(TIMEOUT, this.serverAddress, this.tcpPort,
 					this.udpPort);
 		}
-		client.addListener(new ClientListener());
+		client.addListener(new Listener(){
+			public void received (Connection connection, Object object) {
+				if(object instanceof Message) {
+					if(listener != null) {
+						listener.messageReceived((Message)object);
+					}
+				} else if (object instanceof MessageLog) {
+					if(listener != null) {
+						listener.messageLogReceived(((MessageLog) object).messages);
+					}
+				} else if (object instanceof UserLoggedOut) {
+					if(listener != null) {
+						listener.userLoggedOut(((UserLoggedOut)object).first);
+					}
+				} else if (object instanceof UserLoggedIn) {
+					if(listener != null) {
+						listener.userLoggedIn(((UserLoggedIn)object).first);
+					}
+				} else if (object instanceof RejectedLogin) {
+					if(listener != null) {
+						listener.loginRejected();
+					}
+				} else if (object instanceof LoggedInUsers) {
+					if(listener != null) {
+						listener.loggedInUsersReceived(((LoggedInUsers)object).names);
+					}
+				}
+			}});
 	}
 
 	public void sendMessage(String body) {
@@ -82,6 +122,7 @@ public class SmallTalkClient {
 			address = args[1];
 		}
 		SmallTalkClient client = new SmallTalkClient(address, Network.port);
+		client.setMessageListener(new CommandLineUI());
 		client.start();
 		String cmd = "";
 		Scanner in = new Scanner(System.in);
