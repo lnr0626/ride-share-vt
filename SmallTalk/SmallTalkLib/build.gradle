@@ -1,12 +1,19 @@
 apply plugin: 'java'
-
-dependencies {
-	compile fileTree(dir: 'libs', include: '*.jar')
+repositories {
+    mavenCentral()
 }
-
+dependencies {
+    compile 'com.google.guava:guava:15.0@jar'
+    compile files('libs/reflectasm-1.07.jar')
+    compile files('libs/objenesis-1.2.jar')
+    compile files('libs/minlog-1.2.jar')
+    compile files('libs/kryonet-2.21.jar')
+    compile files('libs/kryo-2.20.jar')
+    compile files('libs/jsonbeans-0.5.jar')
+    compile files('libs/asm-4.0.jar')
+}
 jar {
-	manifest {
-		attributes 'Main-Class': 'com.lloydramey.smalltalk.SmallTalkServer'
-	}
-	from configurations.compile.collect { it.isDirectory() ? it : zipTree(it)}
+    manifest {
+        attributes 'Main-Class': 'com.lloydramey.smalltalk.SmallTalkServer'
+    }
 }

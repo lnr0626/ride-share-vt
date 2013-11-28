@@ -1,1 +1,1 @@
-include ':SmallTalkLib'
+include ':SmallTalkLib', ':SmallTalkClient'
