@@ -20,6 +20,7 @@ import com.lloydramey.smalltalk.SmallTalkListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -61,6 +62,8 @@ public class SmallTalkService extends Service implements SmallTalkListener {
     static final int MSG_NEW_CONVERSATION = 20;
     static final int MSG_IS_LOGGED_IN = 3;
     static final int MSG_IS_LOGGED_OUT = 4;
+    static final int MSG_CONVERSATIONS = 22;
+    static final int MSG_MESSAGES_IN_CONVERSATION = 23;
 
     private Network.User user;
     private Map<String, Network.Conversation> conversations;
@@ -92,6 +95,7 @@ public class SmallTalkService extends Service implements SmallTalkListener {
             Message connected = Message.obtain(null, MSG_CONNECTED);
             Message disconnected = Message.obtain(null, MSG_DISCONNECTED);
             Message reconnected = Message.obtain(null, MSG_RECONNECTED);
+            Message reply;
             switch(msg.what) {
                 case MSG_LOGIN:
                     user = (Network.User)msg.obj;
@@ -184,28 +188,50 @@ public class SmallTalkService extends Service implements SmallTalkListener {
                     }
                     break;
                 case MSG_START_CONVERSTAION:
-                    if(client.isConnected()) {
-                        
+                    if(client.isConnected() && msg.obj != null) {
+                        Network.Conversation c = (Network.Conversation)msg.obj;
+                        client.newConversation(c);
                     }
                     break;
                 case MSG_SEND_MESSAGE:
-                    if(client.isConnected()) {
-
+                    if(client.isConnected() && msg.obj != null) {
+                        client.sendMessage((Network.Message)msg.obj);
                     }
                     break;
                 case MSG_GET_CONVERSATIONS:
                     if(client.isConnected()) {
-
+                        ArrayList<Network.Conversation> convos = new ArrayList<Network.Conversation>();
+                        convos.addAll(conversations.values());
+                        if(msg.replyTo != null) {
+                            reply = Message.obtain(null, MSG_CONVERSATIONS, convos);
+                            try {
+                                msg.replyTo.send(reply);
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                     break;
                 case MSG_GET_MESSAGES_IN_CONVERSATION:
-                    if(client.isConnected()) {
-
+                    if(client.isConnected() && msg.obj != null) {
+                        Network.MessageLog log = messagesByConversationId.get((String)msg.obj);
+                        if(log == null) {
+                            log = new Network.MessageLog();
+                            messagesByConversationId.put((String)msg.obj, log);
+                        }
+                        if(msg.replyTo != null) {
+                            reply = Message.obtain(null, MSG_MESSAGES_IN_CONVERSATION, log);
+                            try {
+                                msg.replyTo.send(reply);
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                     break;
                 case MSG_RELOAD_CONVERSATION:
-                    if(client.isConnected()) {
-
+                    if(client.isConnected() && msg.obj != null) {
+                        client.reloadConversation((String)msg.obj);
                     }
                     break;
                 default:

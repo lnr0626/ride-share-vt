@@ -49,10 +49,8 @@ public class SmallTalkClient {
         client.sendTCP(conversation);
     }
 
-    public void newConversation(ArrayList<String> userEmails) {
-        Network.Conversation conversation = new Network.Conversation();
-        conversation.userEmails = userEmails;
-        conversation.id = Network.generateConversationId(userEmails);
+    public void newConversation(Network.Conversation conversation) {
+        conversation.id = Network.generateConversationId(conversation.userEmails);
         client.sendTCP(conversation);
     }
 	
@@ -124,13 +122,10 @@ public class SmallTalkClient {
         client.close();
     }
 
-	public void sendMessage(String body, String cid) {
+	public void sendMessage(Message message) {
 		if(user != null) {
-			Message message = new Message();
 			message.from = user;
-			message.body = body;
 			message.sent = new Date();
-            message.conversationId = cid;
 			client.sendTCP(message);
 		}
 	}
