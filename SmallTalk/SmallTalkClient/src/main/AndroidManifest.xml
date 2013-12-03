@@ -15,7 +15,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <service android:name=".SmallTalkService"/>
+        <service android:name="com.lloydramey.smalltalk.android.SmallTalkService"/>
         <activity
             android:name="com.lloydramey.android.smalltalkclient.MessageListActivity"
             android:label="@string/app_name" >

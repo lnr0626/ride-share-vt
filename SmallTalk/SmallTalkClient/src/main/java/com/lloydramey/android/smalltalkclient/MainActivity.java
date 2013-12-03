@@ -1,7 +1,6 @@
 package com.lloydramey.android.smalltalkclient;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.ComponentName;
 import android.content.Context;
@@ -16,15 +15,13 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.lloydramey.smalltalk.Network;
+import com.lloydramey.smalltalk.android.SmallTalkService;
 
 public class MainActivity extends Activity {
     /** Messenger for communicating with the service. */

@@ -1,18 +1,13 @@
-package com.lloydramey.android.smalltalkclient;
+package com.lloydramey.smalltalk.android;
 
 import android.app.Service;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.lloydramey.smalltalk.Network;
 import com.lloydramey.smalltalk.SmallTalkClient;
@@ -20,11 +15,8 @@ import com.lloydramey.smalltalk.SmallTalkListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by lloyd on 11/27/13.
@@ -39,31 +31,31 @@ public class SmallTalkService extends Service implements SmallTalkListener {
     public final static String DEF_SERVER_URL = "atrayan.no-ip.org";
     public final static int DEF_SERVER_PORT = Network.port;
 
-    static final int MSG_LOGIN = 0;
-    static final int MSG_LOGOUT = 1;
-    static final int MSG_CHECK_LOGIN = 2;
-    static final int MSG_CONNECT = 5;
-    static final int MSG_DISCONNECT = 6;
-    static final int MSG_RECONNECT = 7;
-    static final int MSG_START_CONVERSTAION = 8;
-    static final int MSG_SEND_MESSAGE = 10;
-    static final int MSG_GET_CONVERSATIONS = 14;
-    static final int MSG_GET_MESSAGES_IN_CONVERSATION = 15;
-    static final int MSG_RELOAD_CONVERSATION = 9;
+    public static final int MSG_LOGIN = 0;
+    public static final int MSG_LOGOUT = 1;
+    public static final int MSG_CHECK_LOGIN = 2;
+    public static final int MSG_CONNECT = 5;
+    public static final int MSG_DISCONNECT = 6;
+    public static final int MSG_RECONNECT = 7;
+    public static final int MSG_START_CONVERSTAION = 8;
+    public static final int MSG_SEND_MESSAGE = 10;
+    public static final int MSG_GET_CONVERSATIONS = 14;
+    public static final int MSG_GET_MESSAGES_IN_CONVERSATION = 15;
+    public static final int MSG_RELOAD_CONVERSATION = 9;
 
-    static final int MSG_CONNECTED = 11;
-    static final int MSG_RECONNECTED = 21;
-    static final int MSG_DISCONNECTED = 12;
-    static final int MSG_LOGIN_REJECTED = 13;
-    static final int MSG_NEW_MESSAGE = 16;
-    static final int MSG_LOGGED_IN_USERS = 17;
-    static final int MSG_USER_LOGGED_OUT = 18;
-    static final int MSG_USER_LOGGED_IN = 19;
-    static final int MSG_NEW_CONVERSATION = 20;
-    static final int MSG_IS_LOGGED_IN = 3;
-    static final int MSG_IS_LOGGED_OUT = 4;
-    static final int MSG_CONVERSATIONS = 22;
-    static final int MSG_MESSAGES_IN_CONVERSATION = 23;
+    public static final int MSG_CONNECTED = 11;
+    public static final int MSG_RECONNECTED = 21;
+    public static final int MSG_DISCONNECTED = 12;
+    public static final int MSG_LOGIN_REJECTED = 13;
+    public static final int MSG_NEW_MESSAGE = 16;
+    public static final int MSG_LOGGED_IN_USERS = 17;
+    public static final int MSG_USER_LOGGED_OUT = 18;
+    public static final int MSG_USER_LOGGED_IN = 19;
+    public static final int MSG_NEW_CONVERSATION = 20;
+    public static final int MSG_IS_LOGGED_IN = 3;
+    public static final int MSG_IS_LOGGED_OUT = 4;
+    public static final int MSG_CONVERSATIONS = 22;
+    public static final int MSG_MESSAGES_IN_CONVERSATION = 23;
 
     private Network.User user;
     private Map<String, Network.Conversation> conversations;

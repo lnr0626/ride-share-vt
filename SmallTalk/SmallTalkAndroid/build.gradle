@@ -6,38 +6,30 @@ buildscript {
         classpath 'com.android.tools.build:gradle:0.6.+'
     }
 }
-apply plugin: 'android'
+apply plugin: 'android-library'
 
 repositories {
     mavenCentral()
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.0.0'
+    compileSdkVersion 18
+    buildToolsVersion "19.0.0"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 7
         targetSdkVersion 16
     }
-    buildTypes {
-        release {
-            runProguard true
-            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
-        }
-    }
-    productFlavors {
-        defaultFlavor {
-            proguardFile 'proguard-rules.txt'
-        }
+    release {
+        runProguard false
+        proguardFile 'proguard-rules.txt'
+        proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
-    compile 'com.android.support:support-v13:+'
+	compile 'com.android.support:appcompat-v7:+'
     compile project(':SmallTalkLib')
-    compile project(':SmallTalkAndroid')
     compile files('libs/asm-4.0.jar')
     compile files('libs/jsonbeans-0.5.jar')
     compile files('libs/kryo-2.20.jar')
