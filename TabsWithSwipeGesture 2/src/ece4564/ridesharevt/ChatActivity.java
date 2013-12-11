@@ -4,9 +4,19 @@ package ece4564.ridesharevt;
 
 import ece4564.ridesharevt.R;
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +24,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.lloydramey.smalltalk.Network;
 
 public class ChatActivity extends Activity {
 
@@ -25,6 +38,98 @@ public class ChatActivity extends Activity {
 	String bgimg = "",_user="",_pass="";
 	int odd_resID,even_resID;
 	ListView myList;
+
+    /** Messenger for communicating with the service. */
+    Messenger mService = null;
+
+    /** Flag indicating whether we have called bind on the service. */
+    boolean mBound;
+
+
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch(msg.what) {
+                case SmallTalkService.MSG_LOGIN_REJECTED:
+                    Toast.makeText(ChatActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+                    finish();
+                    break;
+                default:
+                    super.handleMessage(msg);
+                    break;
+            }
+        }
+    };
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            // This is called when the connection with the service has been
+            // established, giving us the object we can use to
+            // interact with the service.  We are communicating with the
+            // service using a Messenger, so here we get a client-side
+            // representation of that from the raw IBinder object.
+            mService = new Messenger(service);
+            mBound = true;
+            Bundle data = new Bundle();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ChatActivity.this);
+            data.putInt(SmallTalkService.SERVER_PORT_PREF,
+                    prefs.getInt(SmallTalkService.SERVER_PORT_PREF,
+                            SmallTalkService.DEF_SERVER_PORT));
+            data.putString(SmallTalkService.SERVER_URL_PREF,
+                    prefs.getString(SmallTalkService.SERVER_URL_PREF,
+                            SmallTalkService.DEF_SERVER_URL));
+            Message start = Message.obtain(null, SmallTalkService.MSG_CONNECT);
+            start.setData(data);
+            try {
+                mService.send(start);
+                Network.User user = new Network.User();
+                user.email = prefs.getString("email", "");
+                user.first = prefs.getString("name", "");
+                Message msg = Message.obtain(null, SmallTalkService.MSG_LOGIN, user);
+                msg.replyTo = messenger;
+                try {
+                    mService.send(msg);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void onServiceDisconnected(ComponentName className) {
+            // This is called when the connection with the service has been
+            // unexpectedly disconnected -- that is, its process crashed.
+            mService = null;
+            mBound = false;
+        }
+    };
+
+    private final Messenger messenger = new Messenger(handler);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Bind to the service
+        bindService(new Intent(this, SmallTalkService.class), mConnection,
+                Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // Unbind from the service
+        if (mBound) {
+            Message msg = Message.obtain(null, SmallTalkService.MSG_DISCONNECT);
+            try {
+                mService.send(msg);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+            unbindService(mConnection);
+            mBound = false;
+        }
+    }
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

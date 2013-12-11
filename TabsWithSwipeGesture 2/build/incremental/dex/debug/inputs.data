@@ -1,0 +1,58 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1386784811000 1714 328fabfb0f089b891259dd1641afaeb2a9eb01b6 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/Splash.class
+1386784266000 468 c85bc1de04463aa8babce78a60ca5db13eaef77e /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/BuildConfig.class
+1386784266000 938 68a1d66ee1e2b10479fcc326e2343c14b3120485 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R.class
+1386784266000 950 33635b38f7cd0b6bde3e5f5f4247c138318d72b2 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$attr.class
+1386784266000 433 495d4179f631a274d1301adea3e6fbc364f7e5a5 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$integer.class
+1386784266000 730 39c78437c0c3b708a13735c5bc75124f535f3a04 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/Driver.class
+1386784266000 2007 7c2a054128b65cebef88dc391265db2f7b9ad283 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$drawable.class
+1386784266000 1057 0025d143e1273e3b9b0f4e2139afa1400799c0e6 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$color.class
+1386784811000 4773 fde042be08d56995b3d0f4758297cf3680e6d801 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$string.class
+1386784266000 677 bd123c88d2b9228947c8abc6916958cdbfbd07b0 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R.class
+1386785690000 1846 cba55b6b70164c0907f54a173328dbeb828fd72b /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/SetUserInfoActivity$PlaceholderFragment$3.class
+1386784266000 4147 595fbc0ae4882ac80ace1c014b9c7210f8f8ac04 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/FeedFragment.class
+1386784266000 1198 77bf650ea130bfdb2c7b40c08697ce0f7c7a614b /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/Splash$1.class
+1386784266000 1190 c927568f6180a94d559c65f2ca4c76f5f14b6812 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/MainActivity$1.class
+1386784266000 2282 0eae715861bf87e8a8a1ea0f1ef73c94e4723f37 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$drawable.class
+1386784266000 5069 5ce46747424f33f94c92fdaed3d18704494334a0 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/ListOfDriver$FetchDriverListTask.class
+1386784266000 1393 ee38ebdc71a2369afe41f320f2fe5dd85cfec460 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/ChatActivity.class
+1386784811000 1388 ddb96b948376992142f5ca6ed9924990f5cad19c /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$styleable.class
+1386784266000 941 39c48b1c74161deda0da8bfc567831d3db723cac /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$attr.class
+1386784266000 1467 e99b3656eface45d8f49b806afb441ae137c3cec /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/MatchesFragment$FetchDriverListTask$1.class
+1386783117000 23931 c9ad4a0850ab676c5c64461a05ca524cdfff59f1 /home/lloyd/.gradle/caches/artifacts-26/filestore/com.googlecode.json-simple/json-simple/1.1.1/bundle/c9ad4a0850ab676c5c64461a05ca524cdfff59f1/json-simple-1.1.1.jar
+1386784266000 1443 daf62cadb9b3fd8a40299aa28b740b1d90733f32 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/FeedFragment$FetchDriverListTask$1.class
+1386784266000 1397 35ceafcb56adbcf81638995770a8008029e8488b /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$styleable.class
+1386785511000 1840 c8a8fbadf953c4b139612c40c316c370e28f1227 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/SetUserInfoActivity$PlaceholderFragment$2.class
+1386784266000 907 3233c2559cd3a80e360a8b5e146edd7405f1956b /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/adapter/TabsPagerAdapter.class
+1386784266000 3817 25fb4f6c29753fbc27bf7b447409d1c38d235f3c /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/ListOfDriver.class
+1386785690000 1376 3dbbb97a9549d70c9979ede909cdf166e93abfd4 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/SetUserInfoActivity$PlaceholderFragment$4.class
+1386784266000 2049 9633450d2a4fc6d177818f029ec408824d256bd7 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$string.class
+1386784266000 426 c4b14cd6e7a42afe50bc1da51e1ac9a8fbc9f1bb /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$anim.class
+1386784811000 424 66a74871ca881d074fe6daa91455a0471bf3be03 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$integer.class
+1386784811000 434 b1d9b0a75c930abe787f45b472a1fbf8efdff79c /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$style.class
+1386784266000 4260 9941d3131b1e72e44f2fd877670afe64a159e938 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/MatchesFragment.class
+1386784266000 1443 78d5dca60a7d088c9686ea6840542d6d650c591f /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/ListOfDriver$FetchDriverListTask$1.class
+1386784266000 464 1897fcb10843e1ef0fbc2b600a57652de5bded83 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$dimen.class
+1386784266000 1066 d83b63e96b7c91d9cf788d1e213e74c31d68e331 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$color.class
+1386784266000 7268 97bad53bf1990be786be689342934c7c46e0c403 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/Login.class
+1386785511000 1316 c82afd68aec9d175bd4d438fe0d5111eec645ea6 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/SetUserInfoActivity.class
+1386784266000 5142 2de4d84dd314eaf301d91870b86d9e7c0cd35fa7 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/FeedFragment$FetchDriverListTask.class
+1386784266000 4308 48b7156cb584ea9bdda7a3ea6b5df1663bb7854f /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/FinalStop.class
+1386784266000 518 c07dacffdcaef12b4f56e3adfa963485fe1a7658 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/com/google/android/gms/R$id.class
+1386784266000 5475 0cd6932d2f3c33331d0698d29572a9e62e2196b4 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/NewRideActivity.class
+1386785690000 2481 d4fcbdabeb72312b5d6783378507d9e7d5bd1b73 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/SetUserInfoActivity$PlaceholderFragment.class
+1386784811000 1020 9563d62a39fa9ec36df8853e0351fde4498f1635 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$layout.class
+1386784266000 821 43fdcece9df40ce01502c3585002f9ef4d75c9e7 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/YourRidesFragment.class
+1386784266000 5166 3598b273f97bfd933747d0037585bb0f76405b5f /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/MatchesFragment$FetchDriverListTask.class
+1386784811000 544 29ecbeb6654adb9c279e0e9306d2ee0c233c5aef /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$menu.class
+1386784266000 4698 26dc478230b6e6eb884012a0211e958b35dab7de /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/FinalStop$GetXMLTask.class
+1386784810000 6090 7626cec038dd1790dca727f04f15fb972e902371 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/MainActivity.class
+1386785511000 1839 b65a8f04b0a7a48851eeaca002a5e9365a350c40 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/SetUserInfoActivity$PlaceholderFragment$1.class
+1385405788000 629518 afee690af14bd2c32d400cdf78e746fd45c386fa /opt/android-sdk/extras/android/m2repository/com/android/support/support-v4/19.0.0/support-v4-19.0.0.jar
+1386784266000 446 e764e2f3115687d2f7dff53ce40f00b7a8336959 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$array.class
+1386784811000 2362 81c711e7df16329d7b1797e25fa0de0d09f4ce37 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/R$id.class
+1386783899000 959413 cebe8e4a3a469c4623addcca1dc571407ff3a08e /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/exploded-bundles/ComGoogleAndroidGmsPlayServices4030.aar/classes.jar
+1386784266000 707 0a84326ad130d44d68c8c5d5bdb04bb130a5d098 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/UserProfile.class
+1386784811000 2751 5f74a8ca8e25c579b53ca55be7a31a98dbfbc00b /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/classes/debug/ece4564/ridesharevt/ChatActivity$MyCustomAdapter.class
