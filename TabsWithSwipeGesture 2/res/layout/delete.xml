@@ -22,12 +22,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Rider" />
-        
-  <Button
+
+        <Button
             android:id="@+id/DriverButton"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Driver"
-            android:layout_width="fill_parent"></Button>
+            android:text="Driver" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" ></RelativeLayout>
+
 
 
         <Spinner
@@ -55,7 +60,7 @@
         <EditText
             android:id="@+id/seatNum"
             android:layout_height="wrap_content"
-            android:hint="Number of Seats"
+            android:hint=""
             android:inputType="textMultiLine"
             android:layout_width="fill_parent"></EditText>
         

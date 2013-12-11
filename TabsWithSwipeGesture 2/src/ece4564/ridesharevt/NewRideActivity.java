@@ -1,19 +1,25 @@
-package ece4564.ridesharevt;
+
+ package ece4564.ridesharevt;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -44,8 +50,8 @@ public class NewRideActivity extends Activity implements OnClickListener {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		currentPersonName = prefs.getString("name", "");
 		email = prefs.getString("email", "");
-		Toast.makeText(this, currentPersonName + " selected", Toast.LENGTH_LONG)
-				.show();
+//		Toast.makeText(this, currentPersonName + " selected", Toast.LENGTH_LONG)
+//				.show();
 		addingEndLocations();
 		addingStartLocations();
 		addingSmokeOption();
@@ -158,3 +164,5 @@ public class NewRideActivity extends Activity implements OnClickListener {
 	}
 
 }
+
+ 
