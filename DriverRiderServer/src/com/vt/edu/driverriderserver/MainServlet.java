@@ -18,8 +18,9 @@ public class MainServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 9019970271673483305L;
 
-	static ArrayList<Driver> driverList_ = new ArrayList<Driver>();
-
+	static ArrayList<Person> driverList_ = new ArrayList<Person>();
+	static ArrayList<Person> riderList_ = new ArrayList<Person>();
+	
 	public static void main(String[] args) throws Exception {
 		WebAppContext context = new WebAppContext();
 		context.setWar("war");
@@ -67,10 +68,10 @@ public class MainServlet extends HttpServlet {
 		if (!(name == null || numSeats == null || status == null || tod == null
 				|| startLoc == null || endLoc == null || smoke == null)) {
 			if (status.equals("driver")) {
-				Driver driver = new Driver();
-				driver.id = Driver.counter.incrementAndGet();
+				Person driver = new Person();
+				driver.id = Person.counter.incrementAndGet();
 				driver.name = name;
-				driver.numSeats = numSeats;
+				driver.numSeats = Integer.valueOf(numSeats);
 				driver.status = status;
 				driver.tod = tod;
 				driver.startLoc = startLoc;
@@ -81,6 +82,23 @@ public class MainServlet extends HttpServlet {
 			}
 		}
 
+		// Creates an array list of riders
+		if (!(name == null || numSeats == null || status == null || tod == null
+				|| startLoc == null || endLoc == null || smoke == null)) {
+			if (status.equals("rider")) {
+				Person rider = new Person();
+				rider.id = Person.counter.incrementAndGet();
+				rider.name = name;
+				rider.numSeats = Integer.valueOf(numSeats);
+				rider.status = status;
+				rider.tod = tod;
+				rider.startLoc = startLoc;
+				rider.endLoc = endLoc;
+				rider.smoke = smoke;
+				riderList_.add(rider);
+			}
+		}
+		
 		PrintWriter out = resp.getWriter();
 
 		/*
@@ -88,7 +106,7 @@ public class MainServlet extends HttpServlet {
 		 * / The below code prints the values onto the server in json format for
 		 * each driver. This is used so that the client can pull them back into
 		 * the application to make a list of drivers.
-		 */// ////////////////////////////////////////////////////////////////////
+		 *///////////////////////////////////////////////////////////////////////
 
 		out.println("[");
 
@@ -108,7 +126,7 @@ public class MainServlet extends HttpServlet {
 		 * the day before. I plan on implementing that next.
 		 */// ////////////////////////////////////////////////////////////////////
 		for (int i = 0; i < numDrivers; i++) {
-			Driver currentDriver = driverList_.get(i);
+			Person currentDriver = driverList_.get(i);
 			if (tod != null) {
 				String[] splitTodTime = currentDriver.tod.split(":");
 				String hourReqTime = splitTodTime[0];
@@ -123,15 +141,18 @@ public class MainServlet extends HttpServlet {
 				}
 			}
 		}
-		
+
 		boolean started = false;
 
 		for (int i = 0; i < numDrivers; i++) {
-			Driver currDriver = driverList_.get(i);
+			Person currDriver = driverList_.get(i);
 			if (endLoc != null) {
-				if(!currDriver.endLoc.equals(endLoc)) {
+				if (!currDriver.endLoc.equals(endLoc)) {
 					continue;
 				}
+			}
+			if(currDriver.numSeats == 0) {
+				continue;
 			}
 			if (started) {
 				out.print(" ,");

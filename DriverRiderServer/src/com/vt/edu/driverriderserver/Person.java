@@ -3,19 +3,19 @@ package com.vt.edu.driverriderserver;
 import java.util.concurrent.atomic.AtomicInteger;
 
 // Class that stores the driver information
-public class Driver implements Comparable<Driver> {
+public class Person implements Comparable<Person> {
 	static AtomicInteger counter = new AtomicInteger();
 	int id = 0;
 	String name = "Tyler";
-	String numSeats = "3";
-	String status = "Driver";
+	int numSeats = 0;
+	String status = "driver";
 	String tod = "22:30";
 	String startLoc = "Perry Street Parking Garage";
 	String endLoc = "The Village";
 	String smoke = "Non-smoking";
 
 	@Override
-	public int compareTo(Driver other) {
+	public int compareTo(Person other) {
 		
 		String[] splitTodTime = this.tod.split(":");
 		String hourTime = splitTodTime[0];

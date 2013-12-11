@@ -16,6 +16,11 @@
                 <servlet-class>com.vt.edu.driverriderserver.DeleteServlet</servlet-class>
         </servlet>
         
+        <servlet>
+                <servlet-name>AcceptanceServlet</servlet-name>
+                <servlet-class>com.vt.edu.driverriderserver.AcceptanceServlet</servlet-class>
+        </servlet>
+        
         <servlet-mapping>
                 <servlet-name>MainServlet</servlet-name>
                 <url-pattern>/add</url-pattern>
@@ -24,6 +29,12 @@
         <servlet-mapping>
                 <servlet-name>DeleteServlet</servlet-name>
                 <url-pattern>/remove</url-pattern>
+        </servlet-mapping>
+        
+        
+        <servlet-mapping>
+                <servlet-name>AcceptanceServlet</servlet-name>
+                <url-pattern>/acceptance</url-pattern>
         </servlet-mapping>
     
     </web-app>
