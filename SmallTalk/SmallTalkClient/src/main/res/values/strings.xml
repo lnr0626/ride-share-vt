@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Module</string>
+    <string name="title_message_detail">Message Detail</string>
+    <string name="title_activity_configuration">SmallTalk</string>
+    <string name="title_section1">User Info</string>
+    <string name="title_section2">Server Info</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
