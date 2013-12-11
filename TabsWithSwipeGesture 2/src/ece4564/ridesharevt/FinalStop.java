@@ -73,8 +73,9 @@ public class FinalStop extends Activity implements OnClickListener {
 //		min = extras.getInt("min");
 		LocS = extras.getString("startloc");
 		LocE = extras.getString("endloc");
-		currentPersonName = extras.getString("name");
-		email = extras.getString("email");
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		currentPersonName = prefs.getString("name", "");
+		email = prefs.getString("email", "");
 		smoke = extras.getString("SNS");
 		String theRider = "rider";
 		String theDriver = "driver";
@@ -195,7 +196,8 @@ public class FinalStop extends Activity implements OnClickListener {
 			String newURL = "http://atrayan.no-ip.org:4659/add?" + "name="
 					+ name + "&" + "numSeats=" + sSeat + "&" + "status="
 					+ DrivRid + "&" + "tod=" + timepick + "&" + "startLoc="
-					+ LocS + "&" + "endLoc=" + LocE + "&" + "smoke=" + smoke;
+					+ LocS + "&" + "endLoc=" + LocE + "&" + "smoke=" + smoke
+					+ "&" + "email=" + email;
 
 			newURL = newURL.replaceAll(" ", "%20");
 			// make POST request to the given URL
