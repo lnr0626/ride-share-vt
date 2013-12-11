@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RideShareVT</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_chat">Chat</string>
+    <string name="action_plus">New User</string>
+    <string name="action_profile">User Profile</string>
+    <string name="activity_profile">User Profile</string>
+</resources>
