@@ -12,6 +12,11 @@ public final class R {
         public static final int fade_in=0x7f040000;
         public static final int fade_in2=0x7f040001;
     }
+    public static final class array {
+        /**  Nav Drawer Menu Items 
+         */
+        public static final int nav_drawer_items=0x7f070000;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -36,21 +41,21 @@ public final class R {
         public static final int user_icon=0x7f020008;
     }
     public static final class id {
-        public static final int action_chat=0x7f09000d;
-        public static final int action_new=0x7f09000c;
-        public static final int action_profile=0x7f09000b;
-        public static final int action_settings=0x7f09000e;
-        public static final int editText1=0x7f090003;
-        public static final int even_bubble=0x7f090005;
-        public static final int even_container=0x7f090004;
-        public static final int imageView1=0x7f090008;
-        public static final int imageView2=0x7f090009;
-        public static final int imageView3=0x7f09000a;
-        public static final int list_layout=0x7f090001;
-        public static final int myList=0x7f090002;
-        public static final int odd_bubble=0x7f090007;
-        public static final int pager=0x7f090000;
-        public static final int text=0x7f090006;
+        public static final int action_chat=0x7f0a000d;
+        public static final int action_new=0x7f0a000c;
+        public static final int action_profile=0x7f0a000b;
+        public static final int action_settings=0x7f0a000e;
+        public static final int editText1=0x7f0a0003;
+        public static final int even_bubble=0x7f0a0005;
+        public static final int even_container=0x7f0a0004;
+        public static final int imageView1=0x7f0a0008;
+        public static final int imageView2=0x7f0a0009;
+        public static final int imageView3=0x7f0a000a;
+        public static final int list_layout=0x7f0a0001;
+        public static final int myList=0x7f0a0002;
+        public static final int odd_bubble=0x7f0a0007;
+        public static final int pager=0x7f0a0000;
+        public static final int text=0x7f0a0006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -64,8 +69,8 @@ public final class R {
         public static final int splash=0x7f030008;
     }
     public static final class menu {
-        public static final int activity_main_actions=0x7f080000;
-        public static final int main=0x7f080001;
+        public static final int activity_main_actions=0x7f090000;
+        public static final int main=0x7f090001;
     }
     public static final class string {
         public static final int action_chat=0x7f060003;
@@ -74,6 +79,13 @@ public final class R {
         public static final int action_settings=0x7f060001;
         public static final int activity_profile=0x7f060006;
         public static final int app_name=0x7f060000;
+        /**  Content Description 
+         */
+        public static final int desc_list_item_icon=0x7f060009;
+        public static final int drawer_close=0x7f060008;
+        /**  Sliding Menu Information 
+         */
+        public static final int drawer_open=0x7f060007;
         public static final int hello_world=0x7f060002;
     }
     public static final class style {
@@ -98,10 +110,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }
