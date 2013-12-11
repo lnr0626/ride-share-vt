@@ -13,6 +13,6 @@ public class Driver {
 	String email;
 	
 	public String toString() {
-		return name + " " + smoke + " " + tod ;
+		return "Name: " + " " + name + "  " +"departure time:" + " " + tod + "  " + smoke + "  " + "Destination:"+" "+ endLoc ;
 	}
 }

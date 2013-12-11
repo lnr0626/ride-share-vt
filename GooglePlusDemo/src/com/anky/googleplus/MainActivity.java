@@ -40,7 +40,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
         
         mPlusClient = new PlusClient.Builder(this, this, this)
-        .setActions("http://schemas.google.com/AddActivity", "http://schemas.google.com/BuyActivity")
+        .setActions("http://schemas.google.com/AddActivity")
         .build();
 
         mSignInStatus = (TextView) findViewById(R.id.sign_in_status);
@@ -48,8 +48,9 @@ public class MainActivity extends Activity implements OnClickListener,
         mSignInButton.setOnClickListener(this);
         mSignOutButton = findViewById(R.id.sign_out_button);
         mSignOutButton.setOnClickListener(this);
-        buttonStart = (Button) findViewById(R.id.startButton);
-        buttonStart.setOnClickListener(this);
+//        buttonStart = (Button) findViewById(R.id.startButton);
+//        buttonStart.setOnClickListener(this);
+
         
     }
 
@@ -57,6 +58,7 @@ public class MainActivity extends Activity implements OnClickListener,
     public void onStart() {
         super.onStart();
         mPlusClient.connect();
+
     }
 
     @Override
@@ -80,9 +82,11 @@ public class MainActivity extends Activity implements OnClickListener,
                 try {
                     mSignInStatus.setText(getString(R.string.signing_in_status));
                     mConnectionResult.startResolutionForResult(this, REQUEST_CODE_SIGN_IN);
+
                 } catch (IntentSender.SendIntentException e) {
                     // Fetch a new result to start.
                     mPlusClient.connect();
+                    
                     
                 }
                 break;
@@ -94,18 +98,18 @@ public class MainActivity extends Activity implements OnClickListener,
                 }
                 break;
 
-            case R.id.startButton:
-            	if(mPlusClient.isConnected()){
-            		 String currentPersonName = mPlusClient.getCurrentPerson() != null
-            	                ? mPlusClient.getCurrentPerson().getDisplayName()
-            	                : getString(R.string.unknown_person);
-            	                String email = mPlusClient.getAccountName();
-            	                Intent i = new Intent(MainActivity.this, DriverRider.class);
-            	                i.putExtra("name", currentPersonName);
-            	                i.putExtra("email", email);
-            	                startActivity(i);
-            	}
-            	break;
+//            case R.id.startButton:
+//            	if(mPlusClient.isConnected()){
+//            		 String currentPersonName = mPlusClient.getCurrentPerson() != null
+//            	                ? mPlusClient.getCurrentPerson().getDisplayName()
+//            	                : getString(R.string.unknown_person);
+//            	                String email = mPlusClient.getAccountName();
+//            	                Intent i = new Intent(MainActivity.this, DriverRider.class);
+//            	                i.putExtra("name", currentPersonName);
+//            	                i.putExtra("email", email);
+//            	                startActivity(i);
+//            	}
+//            	break;
         }
     }
 
@@ -152,12 +156,22 @@ public class MainActivity extends Activity implements OnClickListener,
         String email = mPlusClient.getAccountName();
         String vtemail = "vt.edu";
         mSignInStatus.setText(email);
-//        if(!email.toLowerCase().trim().contains(vtemail.toLowerCase().trim()));
-//        {
-//            mPlusClient.clearDefaultAccount();
-//            mPlusClient.disconnect();
-//            mPlusClient.connect();
-//        }
+
+        if(!email.toLowerCase().trim().contains(vtemail.toLowerCase().trim()))
+        {
+            mPlusClient.clearDefaultAccount();
+            mPlusClient.disconnect();
+            mPlusClient.connect();
+            Toast.makeText(this, " NOT VT EMAIL", Toast.LENGTH_LONG).show();
+        }
+        if(mPlusClient.isConnected())
+        {
+        	
+	                Intent i = new Intent(MainActivity.this, DriverRider.class);
+	                i.putExtra("name", currentPersonName);
+	                i.putExtra("email", email);
+	                startActivity(i);
+        }
 
 
     }

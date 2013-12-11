@@ -192,7 +192,8 @@ public class FinalStop extends Activity implements OnClickListener {
 			String newURL = "http://atrayan.no-ip.org:4659/add?" + "name="
 					+ name + "&" + "numSeats=" + sSeat + "&" + "status="
 					+ DrivRid + "&" + "tod=" + timepick + "&" + "startLoc="
-					+ LocS + "&" + "endLoc=" + LocE + "&" + "smoke=" + smoke;
+					+ LocS + "&" + "endLoc=" + LocE + "&" + "smoke=" + smoke
+					+ "&" + "email=" + email;
 
 			newURL = newURL.replaceAll(" ", "%20");
 			// make POST request to the given URL
