@@ -25,6 +25,7 @@
     <string name="plus_generic_error">Sign in with Google is not available.</string>
     <string name="loading_status">Loading…</string>
     <string name="title_activity_loc_end">LocEnd</string>
+ 
     <string name="title_activity_location_start">LocationStart</string>
     <string name="title_activity_location_end">LocationEnd</string>
     <string name="title_activity_driver_rider">DriverRider</string>
@@ -57,18 +58,25 @@
 
     <string name="feedbacktitle">Enter feedback details to send to the developer:
     </string>
-    <string name="feedbackname">Your Name</string>
-    <string name="feedbackemail">Your Email</string>
-    <string name="feedbackbody">Feedback Details...</string>
-    <string name="feedbackresponse">Would you like an email response?</string>
-    <string name="feedbackbutton">Send Feedback</string>
-    <string name="feedbacktype">Enter feedback type...</string>
+    <string
+        name="feedbackresponse">Non-Smoking Only?</string>
+    <string
+        name="feedbackbutton">Send Feedback</string>
+    <string
+        name="StartLocal">Enter start location...</string>
 
-    <string name="feedbacktype1">Praise</string>
-    <string name="feedbacktype2">Gripe</string>
-    <string name="feedbacktype3">Suggestion</string>
-    <string name="feedbacktype4">Bug</string>
-    <string name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s
+     <string
+        name="EndLocal">Enter end location...</string>
+    <string
+        name="feedbacktype1">Praise</string>
+    <string
+        name="feedbacktype2">Gripe</string>
+    <string
+        name="feedbacktype3">Suggestion</string>
+    <string
+        name="feedbacktype4">Bug</string>
+    <string
+        name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s
     </string>
     <string name="feedbackmessagebody_responseyes">Requires a response</string>
     <string name="feedbackmessagebody_responseno">Does not require a response</string>

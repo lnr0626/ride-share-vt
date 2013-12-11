@@ -1,7 +1,5 @@
 package ece4564.ridesharevt;
 
-import ece4564.ridesharevt.R;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -91,17 +89,17 @@ public class FinalStop extends Activity implements OnClickListener {
 		drivButton = (Button) findViewById(R.id.button1);
 		drivButton.setOnClickListener(this);
 
-		finalText.setText(DrivRid);
-		finalText2.setText(LocS);
-		finalText3.setText(LocE);
+		finalText.setText( DrivRid);
+		finalText2.setText("Start Location: "+LocS);
+		finalText3.setText("End Location: " +LocE);
 		if(DrivRid.equals("driver"))
 		{
-			finalText4.setText(timepick);
+			finalText4.setText("Departure Time: " +timepick);
 		}
 		else
 			finalText4.setVisibility(View.INVISIBLE);
 		
-		finalText5.setText(currentPersonName);
+		finalText5.setText( currentPersonName);
 		finalText6.setText(smoke);
 
 	}
@@ -153,25 +151,24 @@ public class FinalStop extends Activity implements OnClickListener {
 
 		@Override
 		protected void onPostExecute(String output) {
-			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(FinalStop.this);
 			Toast.makeText(getBaseContext(), DrivRid + " "+ "driver", Toast.LENGTH_LONG)
 					.show();
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(FinalStop.this);
 
 			if(DrivRid.equals("driver"))
 			{
-				Intent i = new Intent(FinalStop.this, ChatActivity.class);
+				Intent i = new Intent(FinalStop.this, MainActivity.class);
 				i.putExtra("name", currentPersonName);
 				i.putExtra("email", email);
 				startActivity(i);
 				
 			}
 			else if(DrivRid.equals("rider")){
-				prefs.edit()
-						.putString("endLoc", LocE)
-					.commit();
-				Intent i = new Intent(FinalStop.this, MainActivity.class);
+				Intent i = new Intent(FinalStop.this, ListOfDriver.class);
+
+				prefs.edit().putString("endLoc", LocE).commit();
+				
 				startActivity(i);	
-				finish();
 			}
 			
 		}

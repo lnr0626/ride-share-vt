@@ -11,9 +11,13 @@
             backward-compatibility can go here.
         -->
     </style>
+    <style name="AppBaseTheme2"  parent= "android:Theme.Black"></style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="AppTheme2" parent="AppBaseTheme2">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

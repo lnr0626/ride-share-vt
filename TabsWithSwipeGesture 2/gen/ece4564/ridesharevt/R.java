@@ -13,9 +13,10 @@ public final class R {
         public static final int fade_in2=0x7f040001;
     }
     public static final class array {
+        public static final int feedbacktypelist=0x7f090000;
         /**  Nav Drawer Menu Items 
          */
-        public static final int nav_drawer_items=0x7f0a0000;
+        public static final int nav_drawer_items=0x7f090001;
     }
     public static final class attr {
         /** 
@@ -182,8 +183,8 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f090000;
-        public static final int activity_vertical_margin=0x7f090001;
+        public static final int activity_horizontal_margin=0x7f0a0000;
+        public static final int activity_vertical_margin=0x7f0a0001;
     }
     public static final class drawable {
         public static final int chat_icon=0x7f020000;
@@ -225,47 +226,49 @@ containing a value of this type.
         public static final int user_icon=0x7f020024;
     }
     public static final class id {
-        public static final int DepartureTime=0x7f06000a;
-        public static final int DriverButton=0x7f060005;
-        public static final int EndLocationSpinner=0x7f060007;
-        public static final int NextButton=0x7f06000b;
-        public static final int RiderButton=0x7f060006;
-        public static final int SmokeSpinner=0x7f06000c;
+        public static final int DepartureTime=0x7f06000e;
+        public static final int DriverButton=0x7f060008;
+        public static final int EndLocationSpinner=0x7f06000a;
+        public static final int NextButton=0x7f06000f;
+        public static final int RiderButton=0x7f060007;
+        public static final int ScrollView01=0x7f060005;
+        public static final int SmokeSpinner=0x7f06000b;
         public static final int StartLocationSpinner=0x7f060009;
-        public static final int action_chat=0x7f060027;
-        public static final int action_new=0x7f060026;
-        public static final int action_profile=0x7f060025;
-        public static final int action_settings=0x7f060028;
-        public static final int button1=0x7f060014;
-        public static final int chat_input_button=0x7f060019;
-        public static final int chat_input_text=0x7f060018;
-        public static final int even_bubble=0x7f06001f;
-        public static final int even_container=0x7f06001e;
+        public static final int TextViewTitle=0x7f060006;
+        public static final int TimeLeaving=0x7f06000d;
+        public static final int action_chat=0x7f060029;
+        public static final int action_new=0x7f060028;
+        public static final int action_profile=0x7f060027;
+        public static final int action_settings=0x7f06002a;
+        public static final int button1=0x7f060016;
+        public static final int chat_input_button=0x7f06001b;
+        public static final int chat_input_text=0x7f06001a;
+        public static final int even_bubble=0x7f060021;
+        public static final int even_container=0x7f060020;
         public static final int hybrid=0x7f060004;
-        public static final int imageView1=0x7f060022;
-        public static final int imageView2=0x7f060023;
-        public static final int imageView3=0x7f060024;
-        public static final int list_layout=0x7f060016;
-        public static final int myList=0x7f060017;
+        public static final int imageView1=0x7f060024;
+        public static final int imageView2=0x7f060025;
+        public static final int imageView3=0x7f060026;
+        public static final int list_layout=0x7f060018;
+        public static final int myList=0x7f060019;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
-        public static final int odd_bubble=0x7f060021;
-        public static final int pager=0x7f060015;
+        public static final int odd_bubble=0x7f060023;
+        public static final int pager=0x7f060017;
         public static final int satellite=0x7f060002;
-        public static final int seatNum=0x7f06000d;
-        public static final int sign_in_button=0x7f06001a;
-        public static final int sign_in_status=0x7f06001c;
-        public static final int sign_out_button=0x7f06001b;
-        public static final int startButton=0x7f06001d;
+        public static final int seatNum=0x7f06000c;
+        public static final int sign_in_button=0x7f06001c;
+        public static final int sign_in_status=0x7f06001e;
+        public static final int sign_out_button=0x7f06001d;
+        public static final int startButton=0x7f06001f;
         public static final int terrain=0x7f060003;
-        public static final int text=0x7f060020;
-        public static final int textViewFinal=0x7f060010;
-        public static final int textViewFinal2=0x7f06000f;
-        public static final int textViewFinal3=0x7f060011;
-        public static final int textViewFinal4=0x7f060012;
-        public static final int textViewFinal5=0x7f06000e;
-        public static final int textViewFinal6=0x7f060013;
-        public static final int timePicker1=0x7f060008;
+        public static final int text=0x7f060022;
+        public static final int textViewFinal=0x7f060011;
+        public static final int textViewFinal2=0x7f060012;
+        public static final int textViewFinal3=0x7f060013;
+        public static final int textViewFinal4=0x7f060014;
+        public static final int textViewFinal5=0x7f060010;
+        public static final int textViewFinal6=0x7f060015;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
@@ -277,13 +280,14 @@ containing a value of this type.
         public static final int activity_main=0x7f030003;
         public static final int activity_profile=0x7f030004;
         public static final int chat_main=0x7f030005;
-        public static final int driver_main=0x7f030006;
-        public static final int fragment_feed=0x7f030007;
-        public static final int fragment_matches=0x7f030008;
-        public static final int fragment_your_rides=0x7f030009;
-        public static final int list_row_layout_even=0x7f03000a;
-        public static final int list_row_layout_odd=0x7f03000b;
-        public static final int splash=0x7f03000c;
+        public static final int delete=0x7f030006;
+        public static final int driver_main=0x7f030007;
+        public static final int fragment_feed=0x7f030008;
+        public static final int fragment_matches=0x7f030009;
+        public static final int fragment_your_rides=0x7f03000a;
+        public static final int list_row_layout_even=0x7f03000b;
+        public static final int list_row_layout_odd=0x7f03000c;
+        public static final int splash=0x7f03000d;
     }
     public static final class menu {
         public static final int activity_main_actions=0x7f0c0000;
@@ -293,6 +297,8 @@ containing a value of this type.
         public static final int main=0x7f0c0004;
     }
     public static final class string {
+        public static final int EndLocal=0x7f07004e;
+        public static final int StartLocal=0x7f07004d;
         public static final int action_chat=0x7f07001d;
         public static final int action_plus=0x7f07001e;
         public static final int action_profile=0x7f07001f;
@@ -325,7 +331,16 @@ containing a value of this type.
         public static final int btn_share=0x7f070023;
         public static final int btn_signin=0x7f070021;
         public static final int btn_signout=0x7f070022;
+        public static final int buttontext_email=0x7f07003f;
+        public static final int buttontext_feedback=0x7f070040;
+        public static final int buttontext_msg_pic=0x7f070041;
+        /**  From User Input File 
+         */
+        public static final int buttontext_simpleemail=0x7f07003b;
+        public static final int buttontext_simpleemail_chooser=0x7f07003e;
         public static final int change_locale=0x7f070025;
+        public static final int chooser=0x7f07003c;
+        public static final int chooser_pic=0x7f07003d;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -400,11 +415,30 @@ containing a value of this type.
         public static final int default_status=0x7f07002a;
         /**  Content Description 
          */
-        public static final int desc_list_item_icon=0x7f07003d;
-        public static final int drawer_close=0x7f07003c;
+        public static final int desc_list_item_icon=0x7f070059;
+        public static final int drawer_close=0x7f070058;
         /**  Sliding Menu Information 
          */
-        public static final int drawer_open=0x7f07003b;
+        public static final int drawer_open=0x7f070057;
+        public static final int email_address=0x7f070044;
+        public static final int email_address_bcc=0x7f070046;
+        public static final int email_address_cc=0x7f070045;
+        public static final int email_message=0x7f070042;
+        public static final int email_subject=0x7f070043;
+        public static final int feedbackbody=0x7f07004a;
+        public static final int feedbackbutton=0x7f07004c;
+        public static final int feedbackemail=0x7f070049;
+        public static final int feedbackmessagebody_format=0x7f070053;
+        public static final int feedbackmessagebody_responseno=0x7f070055;
+        public static final int feedbackmessagebody_responseyes=0x7f070054;
+        public static final int feedbackmessagesubject_format=0x7f070056;
+        public static final int feedbackname=0x7f070048;
+        public static final int feedbackresponse=0x7f07004b;
+        public static final int feedbacktitle=0x7f070047;
+        public static final int feedbacktype1=0x7f07004f;
+        public static final int feedbacktype2=0x7f070050;
+        public static final int feedbacktype3=0x7f070051;
+        public static final int feedbacktype4=0x7f070052;
         public static final int hello_world=0x7f07001c;
         public static final int loading_status=0x7f070030;
         public static final int plus_generic_error=0x7f07002f;
@@ -451,10 +485,14 @@ containing a value of this type.
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b0000;
+        public static final int AppBaseTheme2=0x7f0b0001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0b0001;
+        public static final int AppTheme=0x7f0b0002;
+        /**  All customizations that are NOT specific to a particular API-level can go here. 
+         */
+        public static final int AppTheme2=0x7f0b0003;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.

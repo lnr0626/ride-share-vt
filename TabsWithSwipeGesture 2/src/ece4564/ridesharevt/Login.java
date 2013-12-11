@@ -167,6 +167,17 @@ public class Login extends Activity implements OnClickListener,
             mPlusClient.connect();
             Toast.makeText(this, "NOT VT EMAIL", Toast.LENGTH_LONG).show();
         }
+        if(mPlusClient.isConnected()){
+
+	                Intent i = new Intent(Login.this, MainActivity.class);
+	                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+	                prefs.edit()
+	                		.putString("name", currentPersonName)
+	                		.putString("email", email)
+	                	.commit();
+	                startActivity(i);
+	                finish();
+        }
 
 
     }

@@ -41,11 +41,21 @@
             </intent-filter>
             
         </activity>
+        <activity
+            android:name="ece4564.ridesharevt.Login"
+            android:label="Login"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName="ece4564.ridesharevt..MainActivity" >
+
+            <!-- To support below API Level 14 -->
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+        </activity>
                 <activity
-            android:name="Login"
+            android:name="DriverMain"
             android:label="@string/activity_profile"
-            android:parentActivityName="ece4564.ridesharevt..MainActivity"
-            android:uiOptions="splitActionBarWhenNarrow"  >
+            android:parentActivityName="ece4564.ridesharevt..MainActivity" >
 
             <!-- To support below API Level 14 -->
             <meta-data
@@ -90,7 +100,8 @@
 
         <activity
             android:name="ece4564.ridesharevt.NewRideActivity"
-            android:label="@string/activity_profile"
+            android:label="Create New Ride"
+            android:theme="@style/AppTheme2"
             android:parentActivityName="ece4564.ridesharevt..MainActivity" >
 
             <!-- To support below API Level 14 -->
@@ -100,7 +111,8 @@
         </activity>
         <activity
             android:name="ece4564.ridesharevt.FinalStop"
-            android:label="@string/activity_profile"
+            android:label="Review New Ride"
+            android:theme="@style/AppTheme2"
             android:parentActivityName="ece4564.ridesharevt..MainActivity" >
 
             <!-- To support below API Level 14 -->
