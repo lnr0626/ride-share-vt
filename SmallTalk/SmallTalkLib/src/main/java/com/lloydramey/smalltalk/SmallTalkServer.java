@@ -245,15 +245,7 @@ public class SmallTalkServer {
         try {
             SmallTalkServer server = new SmallTalkServer(Network.port);
             server.start();
-            String cmd;
-            Scanner in = new Scanner(System.in);
-            do {
-                cmd = in.nextLine();
-                if(cmd.equals("status")) {
-                    // TODO: Print status
-                }
-            } while (!cmd.equals("exit"));
-            server.kill();
+            while(true);
         } catch (Exception e) {
             e.printStackTrace(System.err);
             System.exit(1);

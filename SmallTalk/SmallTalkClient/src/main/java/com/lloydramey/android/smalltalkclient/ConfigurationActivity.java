@@ -22,6 +22,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.lloydramey.smalltalk.android.SmallTalkService;
+
 public class ConfigurationActivity extends Activity implements ActionBar.TabListener {
 
     public final static String USER_NAME_PREF = "user_name";
