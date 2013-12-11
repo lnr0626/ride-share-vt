@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android-library'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "19.0.0"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 16
+    }
+    release {
+        runProguard false
+        proguardFile 'proguard-rules.txt'
+        proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+    }
+}
+
+dependencies {
+	compile 'com.android.support:appcompat-v7:+'
+    compile project(':SmallTalkLib')
+    compile files('libs/asm-4.0.jar')
+    compile files('libs/jsonbeans-0.5.jar')
+    compile files('libs/kryo-2.20.jar')
+    compile files('libs/kryonet-2.21.jar')
+    compile files('libs/minlog-1.2.jar')
+    compile files('libs/objenesis-1.2.jar')
+    compile files('libs/reflectasm-1.07.jar')
+}
