@@ -6,7 +6,7 @@
     android:background="#ff8400" >
     
     <TextView android:layout_width="fill_parent"
-        android:id="@android:id/empty"
+        android:id="@id/android:empty"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Shows matches after user has created a new ride"
@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"/>
     
     <ListView
-        android:id="@android:id/list"
+        android:id="@id/android:list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 

@@ -1,8 +1,8 @@
 package ece4564.ridesharevt.adapter;
 
-import ece4564.ridesharevt.FeedFragment;
+import ece4564.ridesharevt.YourRidesFragment;
 import ece4564.ridesharevt.MatchesFragment;
-import ece4564.ridesharevt.TopRatedFragment;
+import ece4564.ridesharevt.FeedFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -19,13 +19,13 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 		switch (index) {
 		case 0:
 			// Top Rated fragment activity
-			return new TopRatedFragment();
+			return new FeedFragment();
 		case 1:
 			// Games fragment activity
 			return new MatchesFragment();
 		case 2:
 			// Movies fragment activity
-			return new FeedFragment();
+			return new YourRidesFragment();
 		}
 
 		return null;

@@ -37,6 +37,72 @@
     <string name="title_activity_chat">Chat</string>
     
     
+    <!-- From User Input File -->
+    <string
+        name="buttontext_simpleemail">Send plain text</string>
+    <string
+        name="chooser">Send message using:</string>
+    <string
+        name="chooser_pic">Send picture using:</string>
+    <string
+        name="buttontext_simpleemail_chooser">Send a message (Choose app to send)
+    </string>
+    <string
+        name="buttontext_email">Send plaintext message (with supplied content)
+    </string>
+    <string
+        name="buttontext_feedback">Send feedback message (with form)
+    </string>
+    <string
+        name="buttontext_msg_pic">Send picture msg (with supplied content)
+    </string>
+    <string
+        name="email_message">This is my message body.\n\nCheers,\nMe
+    </string>
+    <string
+        name="email_subject">This is my subject</string>
+    <string
+        name="email_address">test@fakehost.com</string>
+    <string
+        name="email_address_cc">test_cc@fakehost.com</string>
+    <string
+        name="email_address_bcc">test_bcc@fakehost.com</string>
+
+    <string
+        name="feedbacktitle">Enter feedback details to send to the developer:
+    </string>
+    <string
+        name="feedbackname">Your Name</string>
+    <string
+        name="feedbackemail">Your Email</string>
+    <string
+        name="feedbackbody">Feedback Details...</string>
+    <string
+        name="feedbackresponse">Would you like an email response?</string>
+    <string
+        name="feedbackbutton">Send Feedback</string>
+    <string
+        name="feedbacktype">Enter feedback type...</string>
+
+    <string
+        name="feedbacktype1">Praise</string>
+    <string
+        name="feedbacktype2">Gripe</string>
+    <string
+        name="feedbacktype3">Suggestion</string>
+    <string
+        name="feedbacktype4">Bug</string>
+    <string
+        name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s
+    </string>
+    <string
+        name="feedbackmessagebody_responseyes">Requires a response</string>
+    <string
+        name="feedbackmessagebody_responseno">Does not require a response</string>
+    <string
+        name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
+    
+    
     <!-- Sliding Menu Information -->
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>

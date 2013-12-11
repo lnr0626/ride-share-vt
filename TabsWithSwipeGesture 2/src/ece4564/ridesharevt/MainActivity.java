@@ -13,9 +13,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener {
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.plus.PlusClient;
 
+
+
+public class MainActivity extends FragmentActivity implements
+		ActionBar.TabListener, PlusClient.ConnectionCallbacks, PlusClient.OnConnectionFailedListener {
+
+	private PlusClient mPlusClient;
+	
+	
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
@@ -27,6 +35,10 @@ public class MainActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		mPlusClient = new PlusClient.Builder(this, this, this).setActions("http://schemas.google.com/AddActivity")
+		        .build();
+
+		
 		// Initilization
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
@@ -103,10 +115,31 @@ public class MainActivity extends FragmentActivity implements
     /**
      * Launching new activity
      * */
-    private void UserSelected() {
-        Intent i = new Intent(MainActivity.this, UserProfile.class);
-        startActivity(i);
+    @Override
+    public void onStart(){
+    	super.onStart();
+    	mPlusClient.connect();
     }
+    
+    @Override
+    public void onStop(){
+    	mPlusClient.disconnect();
+    	super.onStop();
+    }
+    
+    private void UserSelected() {
+    	if (mPlusClient.isConnected()){
+    		mPlusClient.clearDefaultAccount();
+    		mPlusClient.disconnect();
+    		mPlusClient.connect();
+    		Intent i = new Intent(MainActivity.this, Login.class);
+    		//finish();
+    		startActivity(i);
+    	}
+    	}
+        //Intent i = new Intent(MainActivity.this, UserProfile.class);
+        //startActivity(i);
+    //}
     private void ChatSelected() {
         Intent i = new Intent(MainActivity.this, ChatActivity.class);
         startActivity(i);
@@ -131,6 +164,25 @@ public class MainActivity extends FragmentActivity implements
 
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	}
+
+	@Override
+	public void onConnected(Bundle connectionHint) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onDisconnected() {
+		mPlusClient.connect();
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onConnectionFailed(ConnectionResult result) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

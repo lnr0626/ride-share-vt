@@ -17,9 +17,11 @@ import org.json.JSONObject;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -151,6 +153,7 @@ public class FinalStop extends Activity implements OnClickListener {
 
 		@Override
 		protected void onPostExecute(String output) {
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(FinalStop.this);
 			Toast.makeText(getBaseContext(), DrivRid + " "+ "driver", Toast.LENGTH_LONG)
 					.show();
 
@@ -163,11 +166,12 @@ public class FinalStop extends Activity implements OnClickListener {
 				
 			}
 			else if(DrivRid.equals("rider")){
-				Intent i = new Intent(FinalStop.this, ListOfDriver.class);
-				i.putExtra("name", currentPersonName);
-				i.putExtra("email", email);
-				i.putExtra("endLoc", LocE);
+				prefs.edit()
+						.putString("endLoc", LocE)
+					.commit();
+				Intent i = new Intent(FinalStop.this, MainActivity.class);
 				startActivity(i);	
+				finish();
 			}
 			
 		}
