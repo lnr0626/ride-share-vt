@@ -52,6 +52,7 @@ public class MainServlet extends HttpServlet {
 		String startLoc = req.getParameter("startLoc");
 		String endLoc = req.getParameter("endLoc");
 		String smoke = req.getParameter("smoke");
+		String email = req.getParameter("email");
 
 		// The code below gets the current time and splits it into hours and
 		// minutes
@@ -77,6 +78,7 @@ public class MainServlet extends HttpServlet {
 				driver.startLoc = startLoc;
 				driver.endLoc = endLoc;
 				driver.smoke = smoke;
+				driver.email = email;
 				driverList_.add(driver);
 				Collections.sort(driverList_);
 			}
@@ -182,6 +184,9 @@ public class MainServlet extends HttpServlet {
 			out.println("\",");
 			out.print("    \"smoke\": \"");
 			out.print(currDriver.smoke);
+			out.println("\"");
+			out.print("    \"email\": \"");
+			out.print(currDriver.email);
 			out.println("\"");
 			out.println("  }");
 		}

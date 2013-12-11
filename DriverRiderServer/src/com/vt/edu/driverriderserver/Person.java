@@ -13,6 +13,7 @@ public class Person implements Comparable<Person> {
 	String startLoc = "Perry Street Parking Garage";
 	String endLoc = "The Village";
 	String smoke = "Non-smoking";
+	String email = "";
 
 	@Override
 	public int compareTo(Person other) {
