@@ -259,8 +259,8 @@ containing a value of this type.
         public static final int seatNum=0x7f06000c;
         public static final int sign_in_button=0x7f06001c;
         public static final int sign_in_status=0x7f06001e;
-        public static final int sign_out_button=0x7f06001d;
-        public static final int startButton=0x7f06001f;
+        public static final int sign_out_button=0x7f06001f;
+        public static final int startButton=0x7f06001d;
         public static final int terrain=0x7f060003;
         public static final int text=0x7f060022;
         public static final int textViewFinal=0x7f060011;

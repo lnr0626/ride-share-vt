@@ -13,6 +13,8 @@ import android.content.IntentSender;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +25,8 @@ import android.widget.Toast;
 
 public class DriverRider extends Activity implements OnClickListener {
 
-	private Button buttonRider, buttonDriver, buttonNext;
+	private Button buttonNext;
+	private View buttonRider, buttonDriver;
 	private Spinner StartLocation, EndLocation, SNS;
 	private TimePicker DepartTime;
 	private EditText SeatNumber;
@@ -42,16 +45,30 @@ public class DriverRider extends Activity implements OnClickListener {
 		buttonNext = (Button) findViewById(R.id.NextButton);
 		buttonNext.setOnClickListener(this);
 		SeatNumber =(EditText) findViewById(R.id.seatNum);
+		SeatNumber.setVisibility(View.INVISIBLE);
 		DepartTime = (TimePicker) findViewById(R.id.DepartureTime);
 		DepartTime.setVisibility(View.INVISIBLE);
 		Bundle extras = getIntent().getExtras();
 		currentPersonName = extras.getString("name");
 		email = extras.getString("email");
-		Toast.makeText(this, currentPersonName + " selected", Toast.LENGTH_LONG)
-				.show();
+//		Toast.makeText(this, currentPersonName + " selected", Toast.LENGTH_LONG)
+//				.show();
 		addingEndLocations();
 		addingStartLocations();
 		addingSmokeOption();
+		
+		SNS.setOnItemSelectedListener(new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                int item = SNS.getSelectedItemPosition();
+//                Toast.makeText(getBaseContext(), 
+//                    "You have selected the book: " + String.valueOf(SNS.getSelectedItem()),
+//                    Toast.LENGTH_SHORT).show();
+            }
+
+
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
 
 	}
 
@@ -101,7 +118,12 @@ public class DriverRider extends Activity implements OnClickListener {
 		switch (view.getId()) {
 		case R.id.DriverButton:
 			DepartTime.setVisibility(View.VISIBLE);
+			SeatNumber.setVisibility(View.VISIBLE);
 			DriverRider = "driver";
+			//buttonRider.setVisibility(View.VISIBLE);
+			//buttonDriver.setVisibility(View.INVISIBLE);
+			buttonDriver.setEnabled(false);
+			buttonRider.setEnabled(true);
 			// person.storeName("Driver");
 			// String DriverRider="driver";
 			// Intent i = new Intent(DriverRider.this, DriverInfo.class);
@@ -113,7 +135,12 @@ public class DriverRider extends Activity implements OnClickListener {
 			break;
 		case R.id.RiderButton:
 			DepartTime.setVisibility(View.INVISIBLE);
+			SeatNumber.setVisibility(View.INVISIBLE);
 			DriverRider = "rider";
+			//buttonRider.setVisibility(View.INVISIBLE);
+			//buttonDriver.setVisibility(View.VISIBLE);
+			buttonDriver.setEnabled(true);
+			buttonRider.setEnabled(false);
 			// person.storeName("Rider");
 			// String RiderDriv="rider";
 			// String timePick = "NULL";
@@ -138,7 +165,10 @@ public class DriverRider extends Activity implements OnClickListener {
 			StartLoc = String.valueOf(StartLocation.getSelectedItem());
 			EndLoc = String.valueOf(EndLocation.getSelectedItem());
 			seat = SeatNumber.getText().toString();
-			
+			//DriverRider = String.valueOf(SNS.getSelectedItem());
+            Toast.makeText(getBaseContext(), 
+                    "You have selected the book: " + String.valueOf(SNS.getSelectedItem()),
+                    Toast.LENGTH_SHORT).show();
 			String timpickhour = DepartTime.getCurrentHour().toString();
 			String timpickmin = DepartTime.getCurrentMinute().toString();
 			String time = timpickhour + ":" + timpickmin;
