@@ -19,8 +19,6 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.plus.PlusClient;
 
-import ece4564.ridesharevt.R;
-
 public class Login extends Activity implements OnClickListener,
         PlusClient.ConnectionCallbacks, PlusClient.OnConnectionFailedListener,
         PlusClient.OnAccessRevokedListener {

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/sad_panda"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
     <EditText
         android:id="@+id/chat_input_text"

@@ -14,8 +14,6 @@ import com.lloydramey.smalltalk.Network;
 
 import java.util.ArrayList;
 
-import ece4564.ridesharevt.R;
-
 public class ChatActivity extends Activity {
 
     String myEmail;

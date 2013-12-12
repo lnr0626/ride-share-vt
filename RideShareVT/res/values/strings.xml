@@ -34,9 +34,9 @@
     <string name="title_activity_driver_list">DriverList</string>
     <string name="title_activity_chat">Chat</string>
     <!-- From User Input File -->
-<string name="buttontext_simpleemail">Send plain text</string>
-<string name="chooser">Send message using:</string>
-<string name="chooser_pic">Send picture using:</string>
+    <string name="buttontext_simpleemail">Send plain text</string>
+    <string name="chooser">Send message using:</string>
+    <string name="chooser_pic">Send picture using:</string>
 <string name="buttontext_simpleemail_chooser">Send a message (Choose app to send)
 </string>
 <string name="buttontext_email">Send plaintext message (with supplied content)
@@ -47,22 +47,22 @@
 </string>
 <string name="email_message">This is my message body.\n\nCheers,\nMe
 </string>
-<string name="email_subject">This is my subject</string>
-<string name="email_address">test@fakehost.com</string>
-<string name="email_address_cc">test_cc@fakehost.com</string>
-<string name="email_address_bcc">test_bcc@fakehost.com</string>
+    <string name="email_subject">This is my subject</string>
+    <string name="email_address">test@fakehost.com</string>
+    <string name="email_address_cc">test_cc@fakehost.com</string>
+    <string name="email_address_bcc">test_bcc@fakehost.com</string>
 
 <string name="feedbacktitle">Enter feedback details to send to the developer:
 </string>
-<string name="feedbackname">Your Name</string>
-<string name="feedbacktype">Your Name</string>
-<string name="feedbackemail">Your Email</string>
-<string name="feedbackbody">Feedback Details...</string>
-<string name="feedbackresponse">Non-Smoking Only?</string>
-<string name="feedbackbutton">Send Feedback</string>
-<string name="StartLocal">Enter start location...</string>
+    <string name="feedbackname">Your Name</string>
+    <string name="feedbacktype">Your Name</string>
+    <string name="feedbackemail">Your Email</string>
+    <string name="feedbackbody">Feedback Details...</string>
+    <string name="feedbackresponse">Non-Smoking Only?</string>
+    <string name="feedbackbutton">Send Feedback</string>
+    <string name="StartLocal">Enter start location...</string>
 
-<string name="EndLocal">Enter end location...</string>
+    <string name="EndLocal">Enter end location...</string>
     <string name="feedbacktype1">Praise</string>
     <string name="feedbacktype2">Gripe</string>
     <string name="feedbacktype3">Suggestion</string>
