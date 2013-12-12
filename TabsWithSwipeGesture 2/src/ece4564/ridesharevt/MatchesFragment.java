@@ -32,6 +32,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import ece4564.ridesharevt.tasks.FetchDriverListTask;
 
 public class MatchesFragment extends ListFragment {
 
@@ -42,6 +43,7 @@ public class MatchesFragment extends ListFragment {
 	String email;
 	String endLoc;
 	String requestUrl;
+    SharedPreferences prefs;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,124 +57,25 @@ public class MatchesFragment extends ListFragment {
 
 	}
 
+    public void refresh() {
+        endLoc = prefs.getString("endLoc",null);
+        if(endLoc != null) {
+            requestUrl = URL + "?endLoc=" + endLoc;
+
+            String newURL = requestUrl.replaceAll(" ", "%20");
+            FetchDriverListTask task = new FetchDriverListTask(this);
+            task.execute(newURL);
+        }
+    }
+
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
+        prefs = PreferenceManager.getDefaultSharedPreferences(activity);
 		currentPersonName = prefs.getString("name", "");
 		email = prefs.getString("email", "");
-		endLoc = prefs.getString("endLoc",null);
 		
-		if(endLoc != null) {
-			requestUrl = URL + "?endLoc=" + endLoc;
-			
-			String newURL = requestUrl.replaceAll(" ", "%20");
-			FetchDriverListTask task = new FetchDriverListTask();
-			task.execute(newURL);
-		}
-	}
-
-	private static String convertInputStreamToString(InputStream inputStream)
-			throws IOException {
-		BufferedReader bufferedReader = new BufferedReader(
-				new InputStreamReader(inputStream));
-		String line = "";
-		String result = "";
-		while ((line = bufferedReader.readLine()) != null)
-			result += line;
-
-		inputStream.close();
-		return result;
-
-	}
-
-	public class FetchDriverListTask extends
-			AsyncTask<String, Void, ArrayList<Driver>> {
-
-		@Override
-		protected ArrayList<Driver> doInBackground(String... urls) {
-			// TODO Auto-generated method stub
-
-			// Hashmap for ListView
-			ArrayList<Driver> driverList = new ArrayList<Driver>();
-
-			// getting JSON string from URL
-			HttpClient client = new DefaultHttpClient();
-			String url = urls[0];
-			HttpGet request = new HttpGet(url);
-			try {
-				HttpResponse response = client.execute(request);
-
-				InputStream inputStream = response.getEntity().getContent();
-
-				// convert inputstream to string
-				if (inputStream != null)
-					result = convertInputStreamToString(inputStream);
-				else
-					return driverList;
-
-				Object obj = JSONValue.parse(result);
-				JSONArray array = (JSONArray) obj;
-
-				// looping through All Contacts
-				for (int i = 0; i < array.size(); i++) {
-					JSONObject c = (JSONObject) array.get(i);
-
-					// Storing each json item in variable
-
-					String id = (String) c.get("ID");
-					String name = (String) c.get("name");
-					String email = (String) c.get("email");
-					String numSeats = (String) c.get("numSeats");
-					String status = (String) c.get("status");
-					String time = (String) c.get("tod");
-					String startLoc = (String) c.get("startLoc");
-					String endLoc = (String) c.get("endLoc");
-					String smoke = (String) c.get("smoke");
-
-					Log.d("tag", name + time);
-					Driver drivers = new Driver();
-					drivers.id = id;
-					drivers.name = name;
-					drivers.numSeats = numSeats;
-					drivers.status = status;
-					drivers.tod = time;
-					drivers.startLoc = startLoc;
-					drivers.endLoc = endLoc;
-					drivers.smoke = smoke;
-					drivers.email = email;
-
-					driverList.add(drivers);
-
-				}
-			} catch (ClientProtocolException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return driverList;
-		}
-
-		@Override
-		public void onPostExecute(ArrayList<Driver> output) {
-
-			ListAdapter adapter = new ArrayAdapter<Driver>(getActivity(),
-					android.R.layout.simple_list_item_1, output);
-			MatchesFragment.this.setListAdapter(adapter);
-			MatchesFragment.this.getListView().setOnItemClickListener(
-					new OnItemClickListener() {
-
-						@Override
-						public void onItemClick(AdapterView<?> arg0, View arg1,
-								int arg2, long arg3) {
-							MatchesFragment.this.onListItemClick((ListView) arg0,
-									arg1, arg2, arg3);
-						}
-					});
-
-		}
+        refresh();
 	}
 
 	@Override

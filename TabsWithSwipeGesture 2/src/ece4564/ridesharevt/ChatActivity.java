@@ -28,16 +28,14 @@ import android.widget.Toast;
 
 import com.lloydramey.smalltalk.Network;
 
+import java.util.ArrayList;
+
 public class ChatActivity extends Activity {
 
-	String[] data = {"Sample User Data ","Sample User Data ","Sample User Data ","Sample User Data ",
-			"Sample User Data ","Sample User Data ","Sample User Data ","Sample User Data ",
-			"Sample User Data ","Sample User Data ","Sample User Data ","Sample User Data ",
-			"Sample User Data ","Sample User Data ","Sample User Data ","Sample User Data "};
-	Drawable[] usrimg=null;
-	String bgimg = "",_user="",_pass="";
-	int odd_resID,even_resID;
+    String myEmail;
+    String cid;
 	ListView myList;
+    ArrayList<Network.Message> messages;
 
     /** Messenger for communicating with the service. */
     Messenger mService = null;
@@ -55,6 +53,14 @@ public class ChatActivity extends Activity {
                     Toast.makeText(ChatActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
                     finish();
                     break;
+                case SmallTalkService.MSG_NEW_MESSAGE:
+                    Toast.makeText(ChatActivity.this, "New Message", Toast.LENGTH_LONG).show();
+                    break;
+                case SmallTalkService.MSG_NEW_CONVERSATION:
+                    Toast.makeText(ChatActivity.this, "New Converstaion", Toast.LENGTH_LONG).show();
+                    cid = ((Network.Conversation)msg.obj).id;
+                    break;
+                case SmallTalkService.MSG_MESSAGES_IN_CONVERSATION:
                 default:
                     super.handleMessage(msg);
                     break;
@@ -90,6 +96,7 @@ public class ChatActivity extends Activity {
                 msg.replyTo = messenger;
                 try {
                     mService.send(msg);
+                    myEmail = user.email;
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -135,8 +142,23 @@ public class ChatActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chat_main);
-		
-		//finding the list view
+
+        Bundle extras = getIntent().getExtras();
+
+        String otherEmail = extras.getString("other_email");
+
+        Network.Conversation convo = new Network.Conversation();
+        convo.userEmails.add(myEmail);
+        convo.userEmails.add(otherEmail);
+        convo.name = otherEmail;
+        Message msg = Message.obtain(null, SmallTalkService.MSG_START_CONVERSTAION, convo);
+        try {
+            mService.send(msg);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        //finding the list view
 		myList = (ListView)findViewById(R.id.myList);
 		myList.setAdapter(new MyCustomAdapter());
 		myList.setCacheColorHint(0);
@@ -158,30 +180,26 @@ public class ChatActivity extends Activity {
 		 */
 		@Override
 		public int getCount() {
-			return data.length;
+			return messages.size();
 		}
 
 		/**
 		 * Get the data item associated with the specified position in the data set.
-		 * (not Implemented at this point)
 		 * @param position The position of the row that was clicked (0-n)
 		 * @see android.widget.Adapter#getItem(int)
 		 */
 		@Override
 		public String getItem(int position) {
-			// TODO Auto-generated method stub
-			return null;
+			return messages.get(position).body;
 		}
 
 		/**
 		 * Get the row id associated with the specified position in the list.
-		 * (not implemented at this point)
 		 * @param position The position of the row that was clicked (0-n)
 		 * @see android.widget.Adapter#getItemId(int)
 		 */
 		@Override
 		public long getItemId(int position) {
-			// TODO Auto-generated method stub
 			return position;
 		}
 
@@ -198,26 +216,17 @@ public class ChatActivity extends Activity {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			LayoutInflater inflater = getLayoutInflater();
 			View row;
-			String even_color,odd_color;
-			SharedPreferences prefList = getSharedPreferences("PrefsFile",MODE_PRIVATE);;
-			even_color = prefList.getString("even_bubble_color","pink");
-			odd_color = prefList.getString("odd_bubble_color","green");
-			int even_color_id=getResources().getIdentifier(even_color,"drawable","com.teks.chilltwit"),
-				odd_color_id=getResources().getIdentifier(odd_color,"drawable","com.teks.chilltwit");
-			ImageView even_view,odd_view;
-			//System.out.println("Timeline: Position: "+position+", Length: "+data.length);
-//			if(position!=data.length-1){
-			if(position%2==0){
+			if(!messages.get(position).from.email.equals(myEmail)) {
 				row = inflater.inflate(R.layout.list_row_layout_even, parent, false);
 				TextView textLabel = (TextView) row.findViewById(R.id.text);
 				
-				textLabel.setText(data[position]);
+				textLabel.setText(messages.get(position).body);
 				
 			}else{
 				row = inflater.inflate(R.layout.list_row_layout_odd, parent, false);
 				TextView textLabel = (TextView) row.findViewById(R.id.text);
-				
-				textLabel.setText(data[position]);
+
+                textLabel.setText(messages.get(position).body);
 			}
 
 			return (row);

@@ -8,4 +8,6 @@
         <!-- API 11 theme customizations can go here. -->
     </style>
 
+    <style name="AppBaseTheme2" parent="android:Theme.Black" />
+
 </resources>

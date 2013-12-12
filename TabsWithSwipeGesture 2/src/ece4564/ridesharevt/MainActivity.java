@@ -141,8 +141,6 @@ public class MainActivity extends FragmentActivity implements
         //startActivity(i);
     //}
     private void ChatSelected() {
-        Intent i = new Intent(MainActivity.this, ChatActivity.class);
-        startActivity(i);
     }
     private void NewRideSelected() {
         Intent i = new Intent(MainActivity.this, NewRideActivity.class);

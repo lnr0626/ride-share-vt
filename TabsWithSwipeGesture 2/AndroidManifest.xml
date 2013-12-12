@@ -19,16 +19,7 @@
         android:theme="@style/AppTheme"
         android:uiOptions="splitActionBarWhenNarrow" >
 
-        <activity android:name="ece4564.ridesharevt.SetUserInfoActivity"
-            android:label="@string/title_activity_set_user_info">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        
-         <meta-data
+        <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity
@@ -45,16 +36,6 @@
             android:name="ece4564.ridesharevt.Login"
             android:label="Login"
             android:theme="@style/AppTheme2"
-            android:parentActivityName="ece4564.ridesharevt..MainActivity" >
-
-            <!-- To support below API Level 14 -->
-            <meta-data
-                android:name="android.support.UI_OPTIONS"
-                android:value="splitActionBarWhenNarrow" />
-        </activity>
-                <activity
-            android:name="DriverMain"
-            android:label="@string/activity_profile"
             android:parentActivityName="ece4564.ridesharevt..MainActivity" >
 
             <!-- To support below API Level 14 -->

@@ -343,6 +343,14 @@ public class SmallTalkService extends Service implements SmallTalkListener {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
+        } else {
+            Intent intent = new Intent(this, ChatActivity.class);
+            String oEmail = notification.conversation.userEmails.get(0);
+            if(oEmail.equals(user.email)) {
+                oEmail = notification.conversation.userEmails.get(1);
+            }
+            intent.getExtras().putString("other_email", oEmail);
+            startActivity(intent);
         }
     }
 

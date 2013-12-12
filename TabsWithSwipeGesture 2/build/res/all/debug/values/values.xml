@@ -5,9 +5,10 @@
     <eat-comment />
 
     <string-array name="feedbacktypelist">
-        <item>Dummy</item>
-        <item>Dummy</item>
-        <item>Dummy</item>
+        <item>@string/feedbacktype1</item>
+        <item>@string/feedbacktype2</item>
+        <item>@string/feedbacktype3</item>
+        <item>@string/feedbacktype4</item>
     </string-array>
     <!-- From: file:/home/lloyd/ride-sharing/TabsWithSwipeGesture%202/res/values/strings.xml -->
     <eat-comment />
@@ -85,6 +86,8 @@
     <!-- From: file:/home/lloyd/ride-sharing/TabsWithSwipeGesture%202/res/values/strings.xml -->
     <eat-comment />
 
+    <string name="EndLocal">Enter end location...</string>
+    <string name="StartLocal">Enter start location...</string>
     <string name="action_chat">Chat</string>
     <string name="action_plus">New User</string>
     <string name="action_profile">User Profile</string>
@@ -157,9 +160,9 @@
     <string name="feedbackmessagebody_responseyes">Requires a response</string>
     <string name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
     <string name="feedbackname">Your Name</string>
-    <string name="feedbackresponse">Would you like an email response?</string>
+    <string name="feedbackresponse">Non-Smoking Only?</string>
     <string name="feedbacktitle">Enter feedback details to send to the developer:</string>
-    <string name="feedbacktype">Enter feedback type...</string>
+    <string name="feedbacktype">Your Name</string>
     <string name="feedbacktype1">Praise</string>
     <string name="feedbacktype2">Gripe</string>
     <string name="feedbacktype3">Suggestion</string>
@@ -184,11 +187,11 @@
     <string name="title_activity_location_end">LocationEnd</string>
     <string name="title_activity_location_start">LocationStart</string>
     <string name="title_activity_main_page_after_login">MainPageAfterLogin</string>
-    <string name="title_activity_set_user_info">SetUserInfoActivity</string>
+    <string name="title_activity_set_user_info">Set User Info</string>
     <string name="txt_login">Login as</string>
     <string name="unknown_person">Unknown</string>
     <string name="user_email">Email</string>
-    <string name="user_name">Name</string>
+    <string name="user_name">Email</string>
     <!-- From: file:/home/lloyd/ride-sharing/TabsWithSwipeGesture%202/res/values/styles.xml -->
     <eat-comment />
 
@@ -200,7 +203,13 @@
         -->
     </style>
 
+    <style name="AppBaseTheme2" parent="android:Theme.Black" />
+
     <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="AppTheme2" parent="AppBaseTheme2">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

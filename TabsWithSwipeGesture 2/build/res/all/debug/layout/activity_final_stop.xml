@@ -1,87 +1,66 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".FinalStop" >
-<!--  
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button1"
-                android:layout_alignBottom="@+id/button1"
-                android:layout_marginRight="39dp"
-                android:layout_toLeftOf="@+id/textViewFinal4"
-                android:text="Button2" />
--->
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical" >
 
-            <TextView
-                android:id="@+id/textViewFinal5"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textViewFinal2"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="28dp"
-                android:text="name" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/textViewFinal2"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textViewFinal"
-                android:layout_below="@+id/textViewFinal5"
-                android:layout_marginTop="18dp"
-                android:text="Start Location" />
+        <TextView
+            android:id="@+id/textViewFinal5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:textSize="10pt" >
+        </TextView>
 
-            <TextView
-                android:id="@+id/textViewFinal"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textViewFinal3"
-                android:layout_below="@+id/textViewFinal2"
-                android:layout_marginTop="18dp"
-                android:text="Driver or Rider" />
+        <TextView
+            android:id="@+id/textViewFinal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Driver or Rider: "
+            android:textSize="10pt" >
+        </TextView>
 
-            <TextView
-                android:id="@+id/textViewFinal3"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textViewFinal4"
-                android:layout_below="@+id/textViewFinal"
-                android:layout_marginTop="30dp"
-                android:text="End Location" />
+        <TextView
+            android:id="@+id/textViewFinal2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Location: "
+            android:textSize="10pt" >
+        </TextView>
 
-            <TextView
-                android:id="@+id/textViewFinal6"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/button1"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="44dp"
-                android:layout_marginLeft="52dp"
-                android:text="Smoking or Non-Smoking" />
+        <TextView
+            android:id="@+id/textViewFinal3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="End Location"
+            android:textSize="10pt" >
+        </TextView>
 
-            <TextView
-                android:id="@+id/textViewFinal4"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textViewFinal6"
-                android:layout_alignLeft="@+id/textViewFinal6"
-                android:layout_marginBottom="25dp"
-                android:text="Departure Time" />
+        <TextView
+            android:id="@+id/textViewFinal4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Departure Time:"
+            android:textSize="10pt" >
+        </TextView>
+  <TextView
+            android:id="@+id/textViewFinal6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Smoking or Non-Smoking: "
+            android:textSize="10pt"></TextView>
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit" >
+        </Button>
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="41dp"
-                android:layout_marginLeft="16dp"
-                android:layout_toRightOf="@+id/textViewFinal6"
-                android:text="Button" />
-
-</RelativeLayout><!-- From: file:/home/lloyd/ride-sharing/TabsWithSwipeGesture%202/res/layout/activity_final_stop.xml -->
+</ScrollView><!-- From: file:/home/lloyd/ride-sharing/TabsWithSwipeGesture%202/res/layout/activity_final_stop.xml -->

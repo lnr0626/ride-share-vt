@@ -6668,16 +6668,16 @@
                     msgid="26645092511305524" >"Dapatkan perkhidmatan Google Play"
                 </string>
                 <string
-                    name="common_signin_button_text"
-                    msgid="9071884888741449141" >"Log masuk"
-                </string>
-                <string
                     name="auth_client_needs_installation_title"
                     msgid="7999585836145154206" >"Perkhidmatan Google Play perlu dipasang untuk mengguankan aplikasi."
                 </string>
                 <string
                     name="common_google_play_services_unsupported_date_text"
                     msgid="4725396522367789365" >"Tarikh pada peranti kelihatan tidak betul. Sila semak tarikh pada peranti."
+                </string>
+                <string
+                    name="common_signin_button_text"
+                    msgid="9071884888741449141" >"Log masuk"
                 </string>
             </file>
             <file
@@ -7249,6 +7249,10 @@
 
                     <!-- API 14 theme customizations can go here. -->
                 </style>
+
+                <style
+                    name="AppBaseTheme2"
+                    parent="android:Theme.Black" />
             </file>
             <file
                 name="ic_laucher"
@@ -7270,19 +7274,26 @@
                 qualifiers="" >
                 <string-array name="feedbacktypelist" >
                     <item>
-Dummy
+@string/feedbacktype1
                     </item>
                     <item>
-Dummy
+@string/feedbacktype2
                     </item>
                     <item>
-Dummy
+@string/feedbacktype3
+                    </item>
+                    <item>
+@string/feedbacktype4
                     </item>
                 </string-array>
             </file>
             <file
                 path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/values/styles.xml"
                 qualifiers="" >
+
+                <style
+                    name="AppBaseTheme2"
+                    parent="android:Theme.Black" />
 
                 <style
                     name="AppBaseTheme"
@@ -7293,6 +7304,13 @@ Dummy
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
                     -->
+                </style>
+
+                <style
+                    name="AppTheme2"
+                    parent="AppBaseTheme2" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
                 </style>
 
                 <style
@@ -7344,6 +7362,8 @@ Dummy
                 <string name="feedbacktitle" >Enter feedback details to send to the developer:
                 </string>
                 <string name="default_status" ></string>
+                <string name="StartLocal" >Enter start location...
+                </string>
                 <string name="unknown_person" >Unknown
                 </string>
                 <string name="action_chat" >Chat
@@ -7378,7 +7398,7 @@ What\'s Hot
                 </string>
                 <string name="buttontext_simpleemail" >Send plain text
                 </string>
-                <string name="feedbacktype" >Enter feedback type...
+                <string name="feedbacktype" >Your Name
                 </string>
                 <string name="drawer_open" >Slider Menu Opened
                 </string>
@@ -7412,7 +7432,7 @@ What\'s Hot
                 </string>
                 <string name="signed_in_status" >Signed in as \"%s\".
                 </string>
-                <string name="title_activity_set_user_info" >SetUserInfoActivity
+                <string name="title_activity_set_user_info" >Set User Info
                 </string>
                 <string name="activity_profile" >User Profile
                 </string>
@@ -7432,9 +7452,9 @@ What\'s Hot
                 </string>
                 <string name="action_plus" >New User
                 </string>
-                <string name="feedbackbody" >Feedback Details...
-                </string>
                 <string name="email_subject" >This is my subject
+                </string>
+                <string name="feedbackbody" >Feedback Details...
                 </string>
                 <string name="revoke_access_button_name" >Revoke access
                 </string>
@@ -7448,7 +7468,7 @@ What\'s Hot
                 </string>
                 <string name="title_activity_chat" >Chat
                 </string>
-                <string name="feedbackresponse" >Would you like an email response?
+                <string name="feedbackresponse" >Non-Smoking Only?
                 </string>
                 <string name="feedbackmessagebody_responseyes" >Requires a response
                 </string>
@@ -7458,11 +7478,13 @@ What\'s Hot
                 </string>
                 <string name="app_name" >RideShareVT
                 </string>
+                <string name="EndLocal" >Enter end location...
+                </string>
                 <string name="desc_list_item_icon" >Item Icon
                 </string>
                 <string name="feedbackbutton" >Send Feedback
                 </string>
-                <string name="user_name" >Name
+                <string name="user_name" >Email
                 </string>
                 <string name="title_activity_location_start" >LocationStart
                 </string>
@@ -7558,6 +7580,11 @@ What\'s Hot
                 qualifiers=""
                 type="layout" />
             <file
+                name="delete"
+                path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/layout/delete.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_driver_rider"
                 path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/layout/activity_driver_rider.xml"
                 qualifiers=""
@@ -7590,6 +7617,10 @@ What\'s Hot
             <file
                 path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/values-v11/styles.xml"
                 qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme2"
+                    parent="android:Theme.Black" />
 
                 <style
                     name="AppBaseTheme"
@@ -7634,16 +7665,6 @@ What\'s Hot
                 path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/drawable-xxhdpi/ic_laucher.png"
                 qualifiers="xxhdpi"
                 type="drawable" />
-            <file
-                name="activity_set_user_info"
-                path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/layout/activity_set_user_info.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_set_user_info"
-                path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/res/layout/fragment_set_user_info.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/home/lloyd/ride-sharing/TabsWithSwipeGesture 2/build/res/rs/debug" />
     </dataSet>
