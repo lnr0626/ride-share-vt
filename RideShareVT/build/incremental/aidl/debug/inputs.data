@@ -1,0 +1,17 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1386817219000 531 223e6501cac6f2df42dfe31a3cbb48fd3d93dd73 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/UserProfile.java
+1386817219000 2307 3a9ec4c433ecb04d229bfe434346499480a81eda /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/MatchesFragment.java
+1386817219000 7994 fea81dce0a929c294cbb77a819e50f1d93e6e605 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/Login.java
+1386818282000 3450 cc2dbffe32cdffac2a1244bb60a4f9ac5c77c9c7 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/ChatActivity.java
+1386817219000 4685 02becbf942344ce555b34d7cf38f5a5c3558df89 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/tasks/FetchDriverListTask.java
+1386817219000 2109 77f74d3fae4de39ef04abfe205b844fda7f6682d /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/FeedFragment.java
+1386817219000 6150 6177176d013642be94d3a41bdc43b5ea1ea4ec99 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/NewRideActivity.java
+1386817825000 6577 8dcf65aa18b18d62d4a2545a5b2f6bfbfde33ddc /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/FinalStop.java
+1386817219000 2232 83a0f18173f655b533e417e8ca8e04de090232e0 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/Splash.java
+1386819739000 5257 4f06a1202be669e6020357d0cc52795ec697bff4 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/MainActivity.java
+1386817219000 367 3ca1dd8120fd27735862593a953f50e25613e841 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/Driver.java
+1386818134000 539 a52847e402af73464bc2e5ff332b84ab796dcfc5 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/ConversationsFragment.java
+1386818024000 1069 b206c0ea40cf9b4fde788bd3ab781d9fb9544d76 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/adapter/TabsPagerAdapter.java
+1386817219000 14405 76be79a26dbcb231f7451d7cf49a82a7f244ac13 /home/lloyd/ride-sharing/TabsWithSwipeGesture 2/src/ece4564/ridesharevt/SmallTalkService.java
